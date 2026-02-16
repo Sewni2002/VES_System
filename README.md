@@ -184,5 +184,5 @@ You can now access the system in your browser.
 
 ## 📅 Project Duration
 
-May 2025 – September 2025
+July 2025 – September 2025
 
