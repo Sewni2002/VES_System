@@ -1,0 +1,465 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: rgba(0, 0, 0, 0.87);
+  --card-bg: #ffffff;
+  --input-bg: #fafafa;
+  --input-border: #ccc;
+  --primary-color: #4a90e2;
+  --primary-hover: #357ab8;
+  --error-color: #e74c3c;
+  --success-color: #019214;
+  --shadow: rgba(0, 0, 0, 0.12);
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.instructorRegisterPage {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+/* All styling under this container only */
+.instructorRegisterPage .registerContainer {
+  max-width: 900px;
+  margin: auto;
+  padding: 2.5rem 2rem;
+  background-color: var(--card-bg);
+  box-shadow: 0 10px 30px var(--shadow);
+  border-radius: 14px;
+  color: var(--text-color);
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.instructorRegisterPage .title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.instructorRegisterPage .form {
+  width: 100%;
+}
+
+.instructorRegisterPage .formWrapper {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.instructorRegisterPage .formColumn {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Scoped label */
+.instructorRegisterPage label {
+  font-weight: 600;
+  display: inline-block;
+  color: var(--text-color);
+  user-select: text;
+}
+
+/* Scoped input/select */
+.instructorRegisterPage input,
+.instructorRegisterPage select {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1.5px solid var(--input-border);
+  border-radius: 8px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.instructorRegisterPage input::placeholder,
+.instructorRegisterPage select::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.instructorRegisterPage input:focus,
+.instructorRegisterPage select:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+}
+
+/* Phone input wrapper */
+.instructorRegisterPage .phoneWrapper {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  position: relative;
+}
+
+.instructorRegisterPage .phoneWrapper input {
+  flex: 1;
+}
+
+.instructorRegisterPage .verifyBtn {
+  background-color: black;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 2.5px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+    height: calc(100% - 4px);  /* roughly input height minus border */
+
+  transition: background-color 0.3s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.instructorRegisterPage .verifyBtn:hover:not(:disabled),
+.instructorRegisterPage .verifyBtn:focus:not(:disabled) {
+  background-color: gray;
+  outline: none;
+}
+
+
+.instructorRegisterPage select {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 1.5px solid var(--input-border);
+  border-radius: 8px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.instructorRegisterPage select:focus {
+  border-color: #000;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.25);
+}
+
+.instructorRegisterPage .verifyBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+    background-color: gray;
+
+}
+
+.instructorRegisterPage input:disabled {
+ background-color: #f5f5f591; /* Light grey background */
+  color: #555;               /* Darker text for contrast */
+  cursor: not-allowed;
+  border: 1px solid #bbb;
+}
+.instructorRegisterPage .verifiedLabel {
+  position: absolute;       /* position absolutely inside the relative parent */
+  right: 1px;               /* small padding from the right edge */
+  top: 41%;                 /* vertically center */
+  transform: translateY(-50%);
+  color: var(--success-color);
+  font-weight: 700;
+  font-size: 0.9rem;
+  user-select: none;
+  padding: 1.4px 13px;
+  background-color: #e6ffe6;
+  border: 1.5px solid var(--success-color);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  height: calc(90% - 4px);  /* roughly input height minus border */
+  cursor: default;
+  margin-top: 2.8px;
+  white-space: nowrap;
+}
+
+
+.instructorRegisterPage .passwordRules {
+  list-style: none;
+  padding-left: 20px;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  color: var(--text-color);
+  user-select: none;
+}
+
+.instructorRegisterPage .passwordRules li {
+  position: relative;
+  padding-left: 26px;
+  line-height: 1.4;
+  flex: 1 1 45%;
+  transition: color 0.3s ease;
+}
+
+.instructorRegisterPage .passwordRules li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #bbb;
+  transition: background-color 0.3s ease;
+}
+
+.instructorRegisterPage .passwordRules li.valid {
+  color: var(--success-color);
+}
+
+.instructorRegisterPage .passwordRules li.valid::before {
+  background-color: var(--success-color);
+}
+
+.instructorRegisterPage .passwordRules li.invalid {
+  color: var(--error-color);
+}
+
+.instructorRegisterPage .valid {
+  border-color: var(--success-color) !important;
+}
+
+.instructorRegisterPage .form button[type="submit"] {
+  margin-top: 1.5rem;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 16px 0;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  user-select: none;
+}
+
+.instructorRegisterPage .form button[type="submit"]:hover:enabled,
+.instructorRegisterPage .form button[type="submit"]:focus:enabled {
+  background-color: #222;
+  outline: none;
+}
+
+.instructorRegisterPage .form button[type="submit"]:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+/* OTP Modal styles */
+.instructorRegisterPage .otpOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.instructorRegisterPage .otpModal {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.instructorRegisterPage .otpTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.instructorRegisterPage .otpSubtitle {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.instructorRegisterPage .otpImage {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+}
+
+.instructorRegisterPage .otpInputGroup {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.instructorRegisterPage .otpDigitBox {
+  width: 48px;
+  height: 56px;
+  font-size: 22px;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  outline: none;
+  padding: 0;
+  line-height: 56px;
+  box-sizing: border-box;
+}
+
+.instructorRegisterPage .otpDigitBox:focus {
+  border-color: #000;
+}
+
+.instructorRegisterPage .otpBtnGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.instructorRegisterPage .otpBtnGroup button,
+.instructorRegisterPage .resendBtn {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.instructorRegisterPage .otpBtnGroup button:hover,
+.instructorRegisterPage .resendBtn:hover {
+  background: #222;
+}
+
+.instructorRegisterPage .countdownText {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.instructorRegisterPage .resendLinkText {
+  font-size: 13px;
+  color: #444;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.instructorRegisterPage .resendLinkText span {
+  text-decoration: underline;
+  color: #000;
+  font-weight: 600;
+}
+
+.instructorRegisterPage .resendLinkText:hover span {
+  color: #222;
+}
+
+.instructorRegisterPage .otpErrorContainer {
+  min-height: 20px;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.instructorRegisterPage .otpErrorMessage {
+  color: #d93025;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeOut 4s forwards;
+  opacity: 1;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.instructorRegisterPage .successOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.instructorRegisterPage .successModal {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 420px;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 30px rgba(0, 255, 150, 0.4);
+  animation: slideUpFade 0.4s ease-out;
+  border: 1px solid #00ffcc;
+}
+
+.instructorRegisterPage .typingEffect {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #00ffcc;
+  font-family: 'Courier New', monospace;
+  position: relative;
+}
+
+.instructorRegisterPage .typingEffect::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background-color: #00ffcc;
+  margin-left: 6px;
+  animation: blink 1s step-end infinite;
+  position: relative;
+  top: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+@keyframes slideUpFade {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

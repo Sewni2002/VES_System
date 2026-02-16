@@ -1,0 +1,173 @@
+/* StudentProgress.css */
+
+/* Container */
+.student-progress-container {
+  background: linear-gradient(180deg, #0a0a0a 0%, #121212 100%);
+  color: #e6e6e6;
+  font-family: "Inter", Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding-bottom: 30px;
+
+}
+
+.student-progress-container .student-progress-container-inner {
+  max-width: 950px;
+  margin: 40px auto;
+  padding: 28px;
+  border-radius: 14px;
+  background: #0b0b0b; 
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-progress-container .student-progress-container-inner:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Header */
+.student-progress-container .header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.student-progress-container .logo {
+  width: 65px;
+  height: 65px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00d07a;
+  font-size: 20px;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  margin-top: 20px;
+}
+
+.student-progress-container .header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Info and Status Cards */
+.student-progress-container .info-card,
+.student-progress-container .status-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.student-progress-container .info-card:hover,
+.student-progress-container .status-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.student-progress-container .info-card h3,
+.student-progress-container .status-card h3 {
+  color: #00d07a;
+  margin-bottom: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.student-progress-container .info-card p,
+.student-progress-container .status-card p {
+  margin: 6px 0;
+  color: #000000;
+  font-size: 0.95rem;
+}
+
+.student-progress-container .info-card strong,
+.student-progress-container .status-card strong {
+  color: #3c3b3b;
+  font-weight: 600;
+}
+
+/* Automated marks summary */
+.student-progress-container .auto-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.student-progress-container .auto-summary p {
+  background: rgba(0, 208, 122, 0.1);
+  border: 1px solid rgba(0, 208, 122, 0.25);
+  color: #00d07a;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* Overall evaluation card */
+.student-progress-container .status-card.overall {
+  border-left: 4px solid #00d07a;
+  background: rgba(0, 208, 122, 0.05);
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Badges */
+.student-progress-container .badge {
+  display: inline-block;
+  background-color: #00d07a;
+  color: #0b0b0c;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-left: 8px;
+}
+
+/* Muted text */
+.student-progress-container .muted {
+  color: #a1a1a1;
+  font-size: 0.9rem;
+}
+
+/* QR Code section */
+.student-progress-container .qr-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.student-progress-container .qr-section img {
+  width: 160px;
+  height: 160px;
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .student-progress-container .student-progress-container-inner {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .student-progress-container .header h1 {
+    font-size: 1.4rem;
+  }
+
+  .student-progress-container .auto-summary {
+    flex-direction: column;
+  }
+}

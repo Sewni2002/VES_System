@@ -1,0 +1,325 @@
+/* =================================================
+   UploadFiles Professional CSS
+   Sidebar + Right Main Content Layout
+   ================================================= */
+
+/* Root colors */
+:root {
+  --primary-white: #ffffff;
+  --primary-black: #111111;
+  --text-muted: #555555;
+  --accent-green: #16a34a;
+  --accent-light-green: #22c55e;
+  --accent-blue: #153b74;
+  --accent-hover-blue: #3164ff;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+  --shadow-light: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Global reset inside container */
+.SP_upload_container * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= Sidebar Styles ================= */
+.UF_sidebar {
+  position: fixed;       /* Fix to screen */
+  top: 0;
+  left: 0;
+  height: 100vh;         /* Full viewport height */
+  width: 260px;
+  background: #000000;   /* Full black sidebar */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 20px;
+  flex-shrink: 0;
+  border-radius: 0 12px 12px 0;
+  overflow-y: auto;      /* Scroll if content exceeds sidebar height */
+  z-index: 1000;         /* Ensure sidebar stays above main content */
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3); /* subtle shadow */
+}
+
+.UF_sidebar_title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.UF_profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.UF_avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.UF_name {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ================= Sidebar Buttons ================= */
+.UF_link {
+  background: #ffffff;   /* White button background */
+  color: #000000;        /* Black text */
+  border: none;
+  padding: 10px 16px;
+  width: 100%;
+  margin-bottom: 12px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.UF_link:hover {
+  background: #f0f0f0;  /* Slight gray on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+/* ================= Main content spacing ================= */
+.SP_dashboard_main {
+  margin-left: 260px;  /* Make room for the fixed sidebar */
+  padding: 2rem;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* ================= Responsive Sidebar ================= */
+@media (max-width: 1024px) {
+  .UF_sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 15px;
+    border-radius: 0;
+  }
+
+  .UF_sidebar_title,
+  .UF_profile {
+    display: none;
+  }
+
+  .UF_link {
+    margin-bottom: 0;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  .SP_dashboard_main {
+    margin-left: 0; /* Remove left margin for mobile */
+    padding: 1rem;
+  }
+}
+
+
+.submission-toggle-wrapper {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 340px;
+  flex-direction: column;
+  align-items: center; /* keep buttons centered */
+  gap: 20px; /* space between buttons and content */
+}
+
+/* The content below should not push the buttons */
+.submission-content {
+  width: 100%;
+  width: 1000px;
+  padding-bottom: 80px;
+}
+
+
+
+
+/* Container for the dashboard content */
+.SP1_dashboard_main_unique_001 {
+  margin-left: 270px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Toggle Buttons Container */
+.submission-toggle-buttons_unique_002 {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  
+}
+
+/* Toggle Buttons */
+.toggle-btn_unique_003 {
+  padding: 10px 25px;
+  border: 2px solid #007bff;
+  background-color: #fff;
+  color: #007bff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn_unique_003:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.active-toggle-btn_unique_004 {
+  padding: 10px 25px;
+  border: 0px solid #007bff;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Code Submission Container */
+.code-submission-container_unique_005 {
+  max-width: 750px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Form Inputs */
+.code-submission-container_unique_005 input[type="text"],
+.code-submission-container_unique_005 select,
+.code-submission-container_unique_005 textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.code-submission-container_unique_005 input[type="text"]:focus,
+.code-submission-container_unique_005 select:focus,
+.code-submission-container_unique_005 textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+/* Message Display */
+.code-submission-message_unique_007 {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Submissions Table */
+.submissions-table_unique_008 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  
+}
+
+.submissions-table_unique_008 th,
+.submissions-table_unique_008 td {
+  padding: 12px 10px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.submissions-table_unique_008 th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}
+
+.submissions-table_unique_008 td pre {
+  max-width: 200px;
+  overflow: auto;
+  white-space: pre-wrap;
+  text-align: left;
+  font-family: Consolas, Monaco, monospace;
+  background-color: #f8f8f8;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.code-submission-container_unique_005 .submit-btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #28a745; /* Green */
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.code-submission-container_unique_005 .submit-btn:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+/* Scoped Edit Button */
+.code-submission-container_unique_005 .edit-btn {
+  background-color: #000000; /* Blue */
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 5px;
+  border-radius: 4px; /* subtle modern look */
+}
+
+.code-submission-container_unique_005 .edit-btn:hover {
+  background-color: #0056b3; /* darker blue on hover */
+}
+
+/* Scoped Delete Button */
+.code-submission-container_unique_005 .delete-btn {
+  background-color: #dc3545; /* Red */
+  color: #fff;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px; /* subtle modern look */
+}
+
+.code-submission-container_unique_005 .delete-btn:hover {
+  background-color: #b02a37; /* darker red on hover */
+}

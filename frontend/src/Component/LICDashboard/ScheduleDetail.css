@@ -1,0 +1,193 @@
+:root {
+  --color-bg: #ffffff;       
+  --color-text: #1f1f1f;     
+  --color-accent: #355E3B;   
+  --color-accent-dark: #2c4a2a; 
+  --color-card-bg: #f9f9f9;  
+  --color-border: #ddd;      
+}
+
+/* Overlay */
+.schdEviny-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Modal Box */
+.schdEviny-modal {
+  background: var(--color-bg);
+  width: 90%;
+  max-width: 900px;
+  border-radius: 14px;
+  padding: 30px 35px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: var(--color-text);
+}
+
+/* Header */
+.schdEviny-modal-header h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.schdEviny-modal-header .schdEviny-center-input {
+  width: 90%;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+  padding: 6px 4px;
+  transition: border-color 0.3s;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.schdEviny-modal-header .schdEviny-center-input:focus {
+  outline: none;
+  border-bottom-color: #F1E0C5;
+}
+
+/* Modal Content Grid */
+.schdEviny-modal-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.schdEviny-modal-left,
+.schdEviny-modal-right {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Details Rows */
+.schdEviny-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.schdEviny-detail-row .schdEviny-label {
+  font-weight: 500;
+  color: #555;
+  min-width: 100px;
+}
+
+.schdEviny-detail-row .schdEviny-value {
+  color: #111;
+  font-weight: 500;
+}
+
+.schdEviny-detail-row-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.schdEviny-group-list {
+  margin: 4px 0 0 24px;
+  padding: 0;
+  list-style-type: disc;
+}
+
+/* Status Badges */
+.schdEviny-status-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.schdEviny-status-badge.pending { 
+  background: #fffae6; 
+  color: #a57c00; 
+}
+.schdEviny-status-badge.accepted { 
+  background: #e6fff0; 
+  color: #007a33; 
+}
+.schdEviny-status-badge.rejected { 
+  background: #ffe6e6; 
+  color: #a30000; 
+}
+
+/* Footer & Buttons */
+.schdEviny-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.schdEviny-btn {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.schdEviny-btn:hover {
+  background-color: #F1E0C5;
+  color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(53, 94, 59, 0.3);
+}
+
+/* Centered Input Fields */
+.schdEviny-center-input {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  border-bottom: 2px solid #ddd;
+  padding: 6px 4px;
+  transition: border-color 0.3s;
+}
+
+.schdEviny-center-input:focus {
+  outline: none;
+  border-bottom-color: #F1E0C5;
+}
+
+/* Icon size */
+.schdEviny-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .schdEviny-modal-grid {
+    flex-direction: column;
+  }
+  .schdEviny-detail-row .schdEviny-label {
+    min-width: 90px;
+  }
+}

@@ -1,0 +1,36 @@
+.login-container {
+  width: 350px;
+  margin: auto;
+  margin-top: 50px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.latest-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 10px;
+}

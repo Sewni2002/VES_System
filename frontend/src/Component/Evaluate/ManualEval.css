@@ -1,0 +1,350 @@
+/* ==========================
+   Global Styles
+========================== */
+
+
+/* ==========================
+   Main Container
+========================== */
+.manual-eval-container {
+  max-width: 900px;
+  margin: 120px auto;
+  padding: 25px 30px 50px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* ==========================
+   Logo & Heading
+========================== */
+.logo-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.eval-logo {
+  width: 100px;
+  height: auto;
+  filter: brightness(0) invert(0); /* makes logo black */
+  animation: floatUpDown 3s ease-in-out infinite; /* add animation */
+}
+
+
+.manual-eval-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================
+   Sections
+========================== */
+.student-info,
+.group-info,
+.automated-marks,
+.submission-section,
+.attendance-section,
+.remote-request {
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Horizontal line on top of each section */
+.student-info::before,
+.group-info::before,
+.automated-marks::before,
+.submission-section::before,
+.attendance-section::before,
+.remote-request::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 2px;
+  background: #e0e0e0;
+  border-radius: 1px;
+}
+
+/* Section Titles */
+.student-info h3,
+.group-info h3,
+.automated-marks h3,
+.submission-section h3,
+.attendance-section h3,
+.remote-request h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+  letter-spacing: 0.3px;
+}
+
+/* Paragraphs inside sections */
+.student-info p,
+.group-info p,
+.automated-marks p,
+.submission-section p,
+.attendance-section p,
+.remote-request p {
+  margin: 6px 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* ==========================
+   Submission Code Box
+========================== */
+.submission-section pre {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  max-height: 350px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-left: 5px solid #28a745;
+}
+
+.submission-section pre::-webkit-scrollbar {
+  height: 6px;
+  width: 6px;
+}
+
+.submission-section pre::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 3px;
+}
+
+.submission-section pre::-webkit-scrollbar-track {
+  background-color: #2c2c2c;
+}
+
+/* ==========================
+   Manual Marks Input & Button
+========================== */
+.submission-section input[type="number"] {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.submission-section input[type="number"]:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40,167,69,0.3);
+}
+
+.submission-section button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #111;
+  color: #fff;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.submission-section button:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* ==========================
+   QR Code Display
+========================== */
+.submission-section img {
+  display: block;
+  margin: 10px auto;
+  border-radius: 8px;
+  width: 160px;
+  height: 160px;
+}
+
+/* ==========================
+   Attendance Buttons
+========================== */
+.attendance-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.attendance-buttons button {
+  background-color: #111;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.attendance-buttons button:hover {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* ==========================
+   Remote Request Button
+========================== */
+.remote-request .approve-btn {
+  background-color: #111;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.remote-request .approve-btn:hover {
+  background-color: #28a745;
+}
+
+/* ==========================
+   Responsive
+========================== */
+@media (max-width: 768px) {
+  .manual-eval-container {
+    padding: 15px 20px;
+  }
+
+  .attendance-buttons {
+    flex-direction: column;
+  }
+
+  .submission-section input[type="number"] {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .submission-section button {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+
+
+.submission-error-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.submission-error-box {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.submission-error-box h2 {
+  margin-bottom: 1rem;
+  color: #e74c3c;
+}
+
+.submission-error-box p {
+  margin-bottom: 1.5rem;
+}
+
+.submission-error-box button {
+  background: #010101;
+  color: rgb(254, 254, 254);
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submission-error-box button:hover {
+  background: #286301;
+}
+
+
+
+
+/* ==========================
+   Info Sections in One Row
+========================== */
+.info-sections-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* ensures responsiveness on small screens */
+  margin-bottom: 25px;
+}
+
+.info-sections-row > div {
+  flex: 1 1 220px; /* grow, shrink, and base width */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.info-sections-row > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 2px;
+  background: #e0e0e0;
+  border-radius: 1px;
+}
+
+.info-sections-row h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+.info-sections-row p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .info-sections-row {
+    flex-direction: column;
+  }
+}

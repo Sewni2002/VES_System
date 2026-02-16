@@ -1,0 +1,1074 @@
+/* Page wrapper */
+.question-gen-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  overflow: hidden; /* prevent body scroll */
+}
+/* Header - fixed */
+.qg-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 28px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+/* Logo */
+.qg-logo {
+  width: 130px;
+  height: auto;
+  margin-right: 15px;
+}
+
+/* Title */
+.qg-header h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0 auto;   /* keep it centered */
+  text-align: center;
+  flex: 1;          /* force it to stay in middle */
+}
+
+/* Right section (clock + dropdown) */
+.qg-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Clock */
+.clock {
+  font-weight: bold;
+  font-size: 14px;
+  color: #444;
+}
+
+/* Dropdown menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: #333;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  margin-top: 8px;
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.dropdown-content button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.dropdown-content button:hover {
+  background-color:  #F1E0C5;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Main container - scrollable */
+/* Main container */
+.question-gen-container {
+  display: flex;
+  position: fixed;
+  max-width: 1400px;
+  margin: 68px auto 50px; /* container margin from viewport */
+  gap: 6px;
+  flex: 1;
+  padding-bottom: 20px;
+  align-items: flex-start; /* top align */
+  justify-content: flex-start;
+  overflow: hidden; /* hide scroll inside container */
+}
+
+/* Student list - sticky within container */
+.student-list {
+  position: sticky;
+  top: 0; /* sticks inside container */
+  flex: 0 0 195px; /* fixed width */
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  height: calc(100vh - 100px - 55px); /* container scroll height minus header/footer */
+  overflow-y: auto;
+}
+
+/* Submission details - flexible width */
+.submission-details {
+  flex: 1; /* take remaining space */
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 1200px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  height: calc(100vh - 100px - 65px);
+  overflow-y: auto;
+}
+
+/* Student item */
+.student-item {
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  transition: all 0.2s ease;
+  color: #333;
+  background-color: #fdfdfdc7;
+  border: 2px solid #858585;
+  width: 150px;
+  text-align: center; /* center text */
+}
+
+.student-item.active {
+  background-color: #000000;
+  color: #fff;
+  border-color: #000000;
+}
+
+.student-item:hover {
+  background-color: #F1E0C5;
+  color: black;
+  border-color: #F1E0C5;
+}
+
+.student-item.completed {
+  background-color: #355E3B;
+  color: white;
+  font-weight: bold;
+}
+
+/* Code Block */
+.code-block {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  margin-top: 15px;
+}
+
+/* Placeholder */
+.placeholder {
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Footer - fixed */
+.qg-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #555;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.03);
+  z-index: 1000;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: #fff;
+  width: 80%;
+  padding: 20px;
+  margin-top: 35px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  max-height: 70%;
+  overflow-y: auto;
+}
+
+.modal-content pre {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+/* Modal Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.modal-close-btn:hover {
+  color: #dc3545;
+}
+
+/* Questions by Level */
+.questions-level {
+  margin-top: 20px;
+}
+
+.questions-level h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+/* Individual question block */
+.question-block {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+/* Question content + actions */
+.question-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* aligns top of question with buttons */
+}
+
+.question-actions {
+  display: flex;
+  flex-direction: column; /* vertical buttons */
+  gap: 5px;
+  min-width: 120px;
+}
+
+.question-actions button {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.question-actions button:hover {
+  opacity: 0.85;
+}
+
+.btn-regenerate { background-color: #ffc107; color: #000; }
+.btn-edit { background-color: #17a2b8; color: #fff; }
+.btn-delete { background-color: #dc3545; color: #fff; }
+.btn-move { background-color: #6c757d; color: #fff; }
+
+/* Loading Overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #007bff;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-overlay p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Saved Questions Modal Professional Style */
+.saved-question-block {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.saved-question-block p {
+  margin: 0 0 10px;
+  font-size: 15px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.saved-question-block ul {
+  padding-left: 20px;
+  margin: 0 0 10px;
+}
+
+.saved-question-block ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.saved-question-block ul li.correct {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Saved Questions Header */
+.questions-level-section h5 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+/* Edit Form Fields - compact version */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* smaller spacing */
+  background-color: #f8f9fa;
+  padding: 10px; /* less padding */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Text inputs */
+.edit-form input[type="text"] {
+  padding: 8px 10px; /* smaller padding */
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 98%;
+  transition: border 0.2s ease;
+}
+
+.edit-form input[type="text"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Option fields in one row */
+.edit-form .option-field {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between input, radio, and label */
+}
+
+/* Option input takes remaining space */
+.edit-form .option-field input[type="text"] {
+  flex: 1; /* input expands to fill available space */
+  padding: 6px 10px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Radio button */
+.edit-form .option-field input[type="radio"] {
+  flex: none; /* keeps radio small */
+  transform: scale(0.9);
+  cursor: pointer;
+}
+
+/* Correct label */
+.edit-form .option-field label {
+  flex: none; /* label stays next to radio */
+  font-size: 14px;
+  margin: 0; /* remove extra margin */
+}
+
+/* Save & Cancel buttons on same row */
+.edit-form .edit-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.edit-form .edit-buttons button {
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-form .edit-buttons button.save {
+  background-color: #355E3B;
+  color: #fff;
+}
+
+.edit-form .edit-buttons button.cancel {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .submission-details { width: 75%; }
+  .student-list { width: 20%; }
+  .question-content { flex-direction: column; }
+  .question-actions { flex-direction: row; flex-wrap: wrap; margin-top: 10px; }
+  .question-actions button { margin-top: 5px; }
+}
+.after-save-buttons {
+  display: flex;
+  gap: 15px; /* space between buttons */
+  margin-top: 10px; /* optional: spacing from the message above */
+}
+
+.after-save-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-view-questions {
+  background-color: #355E3B;
+  color: white;
+}
+
+
+/* Generate Questions Button - Primary */
+.btn-generate {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background-color: #355E3B; /* green */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-generate:hover:not(:disabled) {
+  background-color: #F1E0C5;
+  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-generate:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* View Code Button - Secondary */
+.btn-view-code {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 2px solid #355E3B;
+  background-color: #fff;
+  color: #355E3B;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+after-save-buttons {
+  display: flex;
+  gap: 12px; /* spacing between buttons */
+  margin-top: 16px;
+  flex-wrap: wrap; /* ensures responsiveness on smaller screens */
+}
+
+/* View Saved Questions Button - Primary */
+.btn-view-questions {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background-color: #355E3B; /* blue */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-save{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background-color: #355E3B; /* blue */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-save:hover {
+  background-color: #F1E0C5;
+  color:rgb(0, 0, 0);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Container for question action buttons */
+.question-actions {
+  display: flex;
+  gap: 8px; /* spacing between buttons */
+  margin-top: 16px;
+  flex-wrap: wrap; /* ensures responsiveness on smaller screens */
+}
+
+/* Individual action buttons */
+.question-actions button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+/* Edit button - dark green */
+.question-actions button:nth-child(1) {
+  background-color: #2e7d32; /* dark green */
+}
+.question-actions button:nth-child(1):hover {
+  background-color: #27632a;
+}
+
+/* Delete button - red */
+.question-actions button:nth-child(2) {
+  background-color: #f44336; /* red */
+}
+.question-actions button:nth-child(2):hover {
+  background-color: #e53935;
+}
+
+/* Move Up button - black/gray */
+.question-actions button:nth-child(3),
+.question-actions button:nth-child(4) {
+  background-color: #424242; /* dark gray/black */
+}
+.question-actions button:nth-child(3):hover,
+.question-actions button:nth-child(4):hover {
+  background-color: #1b1b1b;
+}
+
+/* Regenerate button - dark green */
+.question-actions button:nth-child(5) {
+  background-color: #2e7d32; /* dark green */
+}
+.question-actions button:nth-child(5):hover {
+  background-color: #27632a;
+}
+
+
+/* Container spacing if needed (optional) */
+.edit-question-actions {
+  display: flex;
+  gap: 10px; /* spacing between buttons */
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* Save Question Button - dark green */
+.btn-save-question {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2e7d32; /* dark green */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-save-question:hover {
+  background-color: #27632a;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Cancel Button - dark gray / black */
+.edit-question-actions button:nth-child(2) {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: #424242; /* dark gray/black */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.edit-question-actions button:nth-child(2):hover {
+  background-color: #1b1b1b;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Container for inline edit buttons */
+.edit-inline-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* Save button - dark green */
+.btn-inline-save {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2e7d32; /* dark green */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn-inline-save:hover {
+  background-color: #27632a;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+/* Cancel button - dark gray / black */
+.btn-inline-cancel {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  background-color: #424242; /* dark gray / black */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn-inline-cancel:hover {
+  background-color: #1b1b1b;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+
+.btn-view-questions:hover {
+  background-color: #F1E0C5;
+  color:rgb(0, 0, 0);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-view-code:hover {
+  background-color: #F1E0C5;
+  color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: spacing between buttons */
+.btn-generate + .btn-view-code {
+  margin-left: 12px;
+}
+
+.btn-view-code {
+  background-color: #6c757d;
+  color: white;
+}
+
+/* Close Modal Button */
+.btn-close-modal {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+  background-color: #f44336; /* red */
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-close-modal:hover {
+  background-color: #e53935;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn-close-modal:active {
+  transform: scale(0.98);
+}
+
+/* Horizontal buttons for saved questions */
+.saved-question-block .question-actions {
+  display: flex;
+  gap: 10px; /* space between buttons */
+  margin-top: 10px;
+  justify-content: flex-start; /* align left */
+}
+
+.saved-question-block .question-actions button {
+  flex: none; /* prevent buttons from stretching */
+  padding: 6px 14px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.saved-question-block .question-actions button:hover {
+  opacity: 0.85;
+}
+
+.saved-question-block .question-actions button.edit {
+  background-color: #000000;
+  color: #fff;
+}
+
+.saved-question-block .question-actions button.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+.button-row {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  margin-bottom: 10px; /* Optional spacing from other elements */
+}
+
+.button-row button {
+  flex: none; /* Prevent buttons from stretching */
+}
+
+.student-search-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.student-search {
+  width: 130px;
+  padding: 8px 10px 8px 35px; /* extra left padding for icon */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.student-search:focus {
+  outline: none;
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #888;
+  pointer-events: none; /* icon won’t block typing */
+}
+.student-item.completed {
+  background-color: #355E3B; /* light green background */
+  color: white;              /* dark green text */
+  font-weight: bold;
+}
+/* Overlay for format selection modal */
+/* Overlay for format selection modal */
+.format-modal-overlay {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+/* Modal content box */
+.format-modal-box {
+  background: #ffffff; /* solid white box */
+  padding: 30px 25px;
+  border-radius: 12px;
+  min-width: 350px;
+  max-width: 450px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25); /* soft shadow */
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Modal heading */
+.format-modal-box h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Optional description under heading */
+.format-modal-box p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+/* Modal buttons */
+.format-modal-box button {
+  padding: 10px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* CSV button */
+.format-modal-box .csv-btn {
+  background-color: black;
+  color: #fff;
+}
+
+.format-modal-box .csv-btn:hover {
+  background-color: #F1E0C5;
+    color: white;
+
+}
+
+/* PDF button */
+.format-modal-box .pdf-btn {
+  background-color: #355E3B;
+  color: #fff;
+}
+
+.format-modal-box .pdf-btn:hover {
+  background-color: #F1E0C5;
+  color:white;
+}
+
+
+
+.format-modal-box .close1-btn {
+  background-color: #fd0000;
+  color: #fff;
+}
+
+.format-modal-box .close1-btn:hover {
+  background-color: #F1E0C5;
+  color:white;
+}
+
+
+.student-input {
+  width: 100%;
+  padding: 10px 14px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Focus effect */
+.student-input:focus {
+  border-color: #007bff;  /* Blue border */
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+/* Placeholder styling */
+.student-input::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.questiongenerateplaceholder {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: left;
+  color: #333;
+  border: 1px solid #ddd;
+  
+}
+
+.questiongenerateplaceholder-title {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #222;
+}
+
+.questiongenerateplaceholder-intro {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #444;
+}
+
+.questiongenerateplaceholder-instructions {
+  margin-top: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.questiongenerateplaceholder-instructions li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.questiongenerateplaceholder-color-box {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+  border-radius: 3px;
+}
+
+.questiongenerateplaceholder-color-green {
+  background-color: #28a745; /* Green */
+}
+
+.questiongenerateplaceholder-color-white {
+  background-color: #fff; /* White */
+}
+
+.questiongenerateplaceholder-note {
+  margin-top: 15px;
+  font-style: italic;
+  font-size: 17px;
+  color: #555;
+}
+.instructor-id {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  color: #333;
+}

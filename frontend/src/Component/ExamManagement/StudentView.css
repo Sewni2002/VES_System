@@ -1,0 +1,341 @@
+/* Full container with video background */
+.student-container {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+}
+
+/* Video background */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(0.4) contrast(1.2); /* darken video for overlay text */
+}
+
+/* Overlay on top of video for subtle effect */
+.studentviewoverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.153);
+  z-index: 1;
+}
+
+/* Welcome box / Student ID box */
+.welcome-box, .student-id-box {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+/* Titles */
+.welcome-title {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #fff;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.welcome-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  color: #eee;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* Animated glowing line */
+.line-animation {
+  width: 120px;
+  height: 3px;
+  margin: 0 auto 20px auto;
+  background: linear-gradient(90deg, #fff, #000, #fff);
+  background-size: 200% 100%;
+  animation: lineMove 1.5s linear infinite;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+}
+
+/* Bouncing dots loader */
+.dots-loader {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.dots-loader span {
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  animation: bounceDots 1.2s infinite ease-in-out;
+}
+.dots-loader span:nth-child(1) { animation-delay: 0s; }
+.dots-loader span:nth-child(2) { animation-delay: 0.2s; }
+.dots-loader span:nth-child(3) { animation-delay: 0.4s; }
+
+/* Student ID box */
+.student-id-box {
+  font-size: 1.5rem;
+  animation: slideUp 0.8s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceDots {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes glow {
+  from { text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
+  to { text-shadow: 0 0 20px #fff, 0 0 40px #fff; }
+}
+@keyframes lineMove {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 200% 0%; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Session Ready Box */
+.session-ready-box {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  z-index: 2;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 15px;
+  color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo-small {
+  width: 100px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+.session-ready-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
+}
+
+.session-id-text {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.session-start-text {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+/* Keep existing animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }}
+
+/* Question View Container - Fixed Size */
+.question-view {
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff;
+  width: 900px;       /* fixed width */
+  min-height: 530px;  /* fixed height */
+  padding: 25px 30px;
+  border-radius: 12px;
+  margin: 30px auto;  /* center horizontally */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+/* Question heading */
+.question-view h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Question text */
+.question-view p strong {
+  font-weight: 500;
+}
+
+/* Timer Display */
+.question-view p.timer {
+  font-weight: bold;
+  font-size: 18px;
+  color: red;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+/* Option List */
+.question-view ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.question-view li {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.question-view li:hover {
+  background-color: #f0f8ff;
+  border-color: #000;
+}
+
+.question-view li.selected {
+  font-weight: bold;
+  color: #000;
+  border-color: #000;
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.nav-buttons button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #000; /* black button */
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-buttons button:hover {
+  background-color: #333; /* dark grey hover */
+}
+
+.nav-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Prevent size change due to text */
+.question-view ul li,
+.nav-buttons button {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* Overlay Background */
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+/* Overlay Box */
+.confirm-box {
+  background-color: #fff;
+  padding: 35px 30px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 450px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* Heading */
+.confirm-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Paragraph */
+.confirm-box p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Buttons */
+.confirm-btn, .cancel-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: all 0.3s ease;
+}
+
+/* Confirm Button */
+.confirm-btn {
+  background-color: #000; /* black */
+  color: #fff;
+}
+
+.confirm-btn:hover {
+  background-color: #333; /* dark grey on hover */
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background-color: #ccc; /* grey */
+  color: #000;
+}
+
+.cancel-btn:hover {
+  background-color: #999;
+}

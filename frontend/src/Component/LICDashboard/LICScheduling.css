@@ -1,0 +1,300 @@
+@import url('./LDash.css');
+
+.lic-dashboard {
+  padding: 24px;
+  margin-top: 80px;
+  background: #f8f9fa;
+  min-height: 97vh;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: #2c2c2c;
+  margin-bottom: 40px;
+}
+
+.lic-dashboard-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.lic-loading,
+.lic-error {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.lic-empty-state {
+  text-align: center;
+  padding: 60px;
+  color: #777;
+}
+
+.lic-icon-lg {
+  width: 48px;
+  height: 48px;
+  color: #355E3B;
+}
+
+.lic-section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.lic-date-picker {
+  margin-left: auto;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.lic-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.lic-search-field,
+.lic-search-select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.lic-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.lic-btn {
+  background: #355E3B;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+}
+
+.lic-btn:hover {
+  background: #F1E0C5;
+  color: #2c2c2c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(55, 94, 59, 0.3);
+}
+
+/* Schedule Grid */
+.lic-schedule-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.lic-schedule-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.lic-schedule-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.lic-schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lic-group-tag {
+  background: #355E3B;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.lic-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #dc3545;
+  transition: transform 0.2s;
+}
+
+.lic-delete-btn:hover {
+  transform: scale(1.1);
+}
+
+.lic-schedule-details {
+  margin-top: 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.lic-icon-sm {
+  width: 16px;
+  height: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.lic-status-field {
+  margin-top: 14px;
+}
+
+.lic-status {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.lic-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.lic-accepted {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.lic-rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+/* Student Availability Table Styles */
+.availability-section {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.availability-controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.availability-table-container {
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.availability-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.availability-table th,
+.availability-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.availability-table th {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+
+.time-slot {
+  background: #f9f9f9;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.availability-cell {
+  cursor: pointer;
+  transition: background-color 0.2s;
+  min-width: 60px;
+}
+
+.availability-cell.available {
+  background: #d4edda;
+  color: #155724;
+}
+
+.availability-cell.busy {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.availability-cell:hover {
+  opacity: 0.8;
+}
+
+.availability-legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.legend-color.available {
+  background: #d4edda;
+}
+
+.legend-color.busy {
+  background: #f8d7da;
+}
+
+/* Secondary button style */
+.lic-btn.secondary {
+  background: #6c757d;
+}
+
+.lic-btn.secondary:hover {
+  background: #5a6268;
+}

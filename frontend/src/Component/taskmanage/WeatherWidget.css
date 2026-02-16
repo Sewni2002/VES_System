@@ -1,0 +1,81 @@
+.weather-widget {
+  position: relative;
+  width: 300px;
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+  margin: 20px auto;
+  text-align: center;
+  transition: background 0.5s ease;
+}
+
+
+.weather-clear {
+  background: linear-gradient(to top, #56ccf2, #2f80ed);
+}
+.weather-clouds {
+  background: linear-gradient(to top, #bdc3c7, #2c3e50);
+}
+.weather-rain {
+  background: linear-gradient(to top, #4e54c8, #8f94fb);
+}
+.weather-snow {
+  background: linear-gradient(to top, #83a4d4, #b6fbff);
+}
+.weather-drizzle {
+  background: linear-gradient(to top, #74ebd5, #acb6e5);
+}
+.weather-thunderstorm {
+  background: linear-gradient(to top, #141e30, #243b55);
+}
+
+/* Rain animation */
+.weather-rain::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 150%;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.2) 0,
+    rgba(255,255,255,0.2) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  animation: rain-fall 0.5s linear infinite;
+}
+
+@keyframes rain-fall {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* Weather info text */
+.weather-info h3 {
+  font-size: 22px;
+  margin: 5px 0;
+}
+.weather-temp {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+.weather-condition {
+  font-size: 18px;
+  margin: 5px 0;
+}
+.weather-advice {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Loading text */
+.weather-loading {
+  font-size: 18px;
+  color: #555;
+}

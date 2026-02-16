@@ -1,0 +1,38 @@
+.success-container {
+  max-width: 600px;
+  margin: 100px auto;
+  padding: 40px;
+  border: 2px solid #e0e0e0;
+  border-radius: 16px;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9fb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.success-container h2 {
+  font-size: 28px;
+  color: #2e7d32;
+  margin-bottom: 20px;
+}
+
+.success-container p {
+  font-size: 16px;
+  color: #555;
+}
+
+.success-container button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.success-container button:hover {
+  background-color: #256428;
+}

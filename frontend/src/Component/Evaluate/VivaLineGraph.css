@@ -1,0 +1,182 @@
+/* ------------------------- */
+/* Base Styling */
+/* ------------------------- */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ------------------------- */
+/* Main Container */
+/* ------------------------- */
+.viva-container {
+  max-width: 1200px;
+  margin: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 30px;
+  padding-bottom: 60px;
+  background-color: #f5f7fa;
+}
+
+/* ------------------------- */
+/* Page Titles & Headings */
+/* ------------------------- */
+.viva-container h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.viva-container h3 {
+  font-size: 1.5rem;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  color: #555;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+/* ------------------------- */
+/* Chart & Card Styling */
+/* ------------------------- */
+.chart-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-bottom: 30px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* ------------------------- */
+/* Report Table Section */
+/* ------------------------- */
+#report-section {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  margin-top: 30px;
+  overflow-x: auto; /* enable horizontal scroll on small screens */
+}
+
+#report-section table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* ensure table is readable on larger screens */
+}
+
+#report-section th, 
+#report-section td {
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#report-section th {
+  background-color: #f0f0f0;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#report-section tr:hover {
+  background-color: #f9f9f9;
+  transition: background-color 0.2s ease;
+}
+
+/* ------------------------- */
+/* PDF Download Button */
+/* ------------------------- */
+.pdf-button {
+  background-color: #00ccff;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.pdf-button:hover {
+  background-color: #00a3cc;
+  transform: translateY(-2px);
+}
+
+/* ------------------------- */
+/* Responsive Design */
+/* ------------------------- */
+@media (max-width: 1024px) {
+  .viva-container {
+    padding: 20px 15px;
+  }
+
+  #report-section table, #report-section th, #report-section td {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .viva-container {
+    margin: 60px 10px;
+    padding: 15px 10px;
+  }
+
+  .viva-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .viva-container h3 {
+    font-size: 1.3rem;
+  }
+
+  #report-section table, #report-section th, #report-section td {
+    font-size: 0.85rem;
+  }
+
+  .pdf-button {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+  }
+}
+
+/* ------------------------- */
+/* Subtle Animations */
+/* ------------------------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.viva-container > * {
+  animation: fadeInUp 0.5s ease forwards;
+}

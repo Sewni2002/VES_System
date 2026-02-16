@@ -1,0 +1,51 @@
+.payment-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9fb;
+  min-height: 100vh;
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+padding: 16px 32px 1px 32px; /* top right bottom left */
+  background-color: #000000;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.student-info {
+  font-size: 16px;
+  color: black;
+}
+
+.payment-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+}
+
+.portal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}

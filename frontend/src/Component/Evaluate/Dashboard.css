@@ -1,0 +1,61 @@
+.ch-dashboard {
+  padding: 30px;
+  
+  margin-top: 120px;
+  text-align: center;
+}
+
+.ch-page-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 40px;
+}
+
+.ch-card-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  flex-wrap: nowrap; /* all in one row */
+}
+
+.ch-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 24px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.ch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.ch-card-icon {
+  margin-bottom: 16px;
+}
+
+.ch-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.ch-card-desc {
+  list-style-type: disc;
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 20px;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.ch-card-desc li {
+  margin-bottom: 6px;
+}

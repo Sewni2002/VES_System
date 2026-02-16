@@ -1,0 +1,133 @@
+@import url('./LDash.css');
+
+.schedule-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.schedule-modal {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  width: 500px;
+  max-width: 90%;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  position: relative;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+  color: var(--color-text);
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: var(--color-accent);
+}
+
+.schedule-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.6rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.date-time {
+  font-size: 14px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text);
+}
+
+.detail-row {
+  margin: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+/* Status Badges */
+.status-badge {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-badge.accepted {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-badge.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Buttons */
+.schedule-modal .btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary {
+  background-color: #355E3B; /* dark green / blackish */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #F1E0C5;
+  color: #2c2c2c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: #1f1f1f; /* black */
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #F1E0C5;
+  color: #2c2c2c;
+  transform: translateY(-1px);
+}
+
+/* Responsive: stack content on smaller screens */
+@media (max-width: 480px) {
+  .schedule-modal {
+    width: 100%;
+    padding: 20px;
+  }
+}

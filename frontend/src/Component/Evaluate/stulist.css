@@ -1,0 +1,123 @@
+/* Container */
+.group-container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 1000px;
+  margin: 120px auto;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #1e1e1e;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+.group-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Member Section */
+.member-section {
+  margin-top: 20px;
+}
+
+/* Grid Layout */
+.member-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Student Card */
+.member-card {
+  background: #fafafa;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  background: #f9fbff;
+  border-color: #2563eb;
+}
+
+/* Student Details */
+.member-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.member-id,
+.member-topic {
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: #555;
+}
+
+/* Evaluate Button */
+.evaluate-btn {
+  margin-top: 15px;
+  background: #000000;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.evaluate-btn:hover {
+  background: #127041;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Loading & Error States */
+.loading-text,
+.error-text {
+  text-align: center;
+  font-size: 1rem;
+  padding: 12px 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.loading-text {
+  background: #f0f9ff;
+  color: #2563eb;
+  border: 1px solid #bae6fd;
+}
+
+.error-text {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

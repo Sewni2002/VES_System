@@ -1,0 +1,254 @@
+/* Header */
+.qg-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  z-index: 1000;
+}
+
+.qg-logo {
+  height: 45px;
+}
+
+.qg-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.qg-header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.clock {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: #000000;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+.dropdown-content button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-content button:hover {
+  background: #f1f1f1;
+}
+
+/* Footer */
+.qg-footer {
+  text-align: center;
+  padding: 12px;
+  background: #f9f9f9;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+  margin-top: auto;
+}
+
+/* Modal Overlay */ .ivv-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; z-index: 1000; /* make sure it's on top */ } .ivv-modal-box { background: #fff; padding: 30px; border-radius: 8px; width: 400px; max-width: 90%; text-align: center; } .ivv-modal-buttons { margin-top: 20px; display: flex; justify-content: space-around; } .ivv-confirm-btn { background-color: #4caf50; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; } .ivv-cancel-btn { background-color: #f44336; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; } .ivv-modal-logo { width: 90px; /* adjust size */ height: auto; display: block; margin: 0 auto 15px auto; /* center above text with bottom margin */ }
+/* Evaluation Container */
+/* Keep header and footer as-is */
+
+/* Evaluation Container */
+/* Keep header and footer unchanged */
+
+/* Page background (fixed, does not scroll with content) */
+
+
+/* Evaluation Container */
+.ins-container {
+  display: flex;
+  gap: 40px;
+  padding: 30px;
+  margin-top: 50px;
+  height: calc(100vh - 90px); /* fill screen minus header/footer */
+  box-sizing: border-box;
+}
+
+/* Left side: scrollable session list */
+.ins-box {
+  flex: 1;
+  max-width: 600px;
+  margin-top: 30px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow-y: auto;   /* ✅ only left side scrolls */
+}
+
+/* Right side: fixed chart */
+.chart-box {
+  width: 340px;
+  align-self: flex-start;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 110px; /* stays visible under header */
+}
+
+/* Instructions */
+.ins-instructions {
+  margin: 20px 0;
+  background: #fff;
+  padding: 18px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+}
+
+.ins-started-msg {
+  color: #2e7d32;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+/* Modal Overlay */
+.ivv-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.ivv-modal-box {
+  background: #fff;
+  padding: 35px 30px;
+  border-radius: 10px;
+  width: 420px;
+  max-width: 95%;
+  text-align: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Buttons */
+.ivv-modal-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ivv-confirm-btn {
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.ivv-confirm-btn:hover {
+  background-color: #256528;
+}
+
+.ivv-cancel-btn {
+  background-color: #c62828;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.ivv-cancel-btn:hover {
+  background-color: #a61c1c;
+}
+
+/* Session List Vertical Cards */
+.session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.session-card {
+  background: #fff;
+  padding: 16px 20px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.session-card:hover {
+  background: #f9f9f9;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.session-card.completed {
+  border-left: 5px solid #2e7d32;
+}
+
+.session-card.pending {
+  border-left: 5px solid #ef6c00;
+}
+
+.session-card h4 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+.session-card p {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #555;
+}

@@ -1,0 +1,543 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* black background for the page */
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  color: #ffffff;
+}
+
+.viva-form {
+  margin: 20px auto; /* center horizontally with margin */
+  padding: 30px 20px 6px;
+  background-color: #ffffff; /* dark form background */
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3); /* optional green glow */
+  color: #fff;
+}
+
+
+.viva-form h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--text-color);
+}
+
+.viva-form form {
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px var(--shadow);
+}
+
+.viva-form .form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.viva-form .form-column {
+  flex: 1;
+  min-width: 320px;
+}
+
+.viva-form form div {
+  margin-bottom: 18px;
+}
+
+.viva-instructions {
+  background: #1c1c1c; /* softer dark gray background */
+  color: #f0f0f0;       /* light text */
+  border-left: 5px solid #f70404; /* gold/orange accent */
+  padding: 20px;
+  border-radius: 1px;
+}
+
+.viva-instructions h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.viva-instructions li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #dddddd;
+}
+
+.viva-instructions p {
+ 
+  color: #dddddd;
+}
+
+
+.viva-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-color);
+}
+.year-semester-wrapper {
+  display: flex;
+  gap: 20px; /* space between the two fields */
+  flex-wrap: wrap; /* responsive, so it wraps on smaller screens */
+}
+
+.year-semester-wrapper .form-group {
+  flex: 1; /* each takes equal width */
+  min-width: 150px; /* minimum width so they don't shrink too much */
+}
+
+.viva-form input[type="text"],
+.viva-form input[type="email"],
+.viva-form input[type="file"],
+
+.viva-form input[type="tel"] {
+  width: 95%;
+  padding: 10px 14px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.viva-form select{
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+
+.viva-form input[readonly] {
+  background-color: #f5f5f5; /* Light grey background */
+  color: #555;               /* Darker text for contrast */
+  cursor: not-allowed;
+  border: 1px solid #bbb;
+}
+
+
+.viva-form input[type="password"]
+{
+  width: 150%;
+  padding: 10px 14px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border-radius: 8px;
+  font-size: 15px;
+  margin-top: 8px;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+
+
+
+.viva-form input:focus,
+.viva-form select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+.viva-form .password-container .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.viva-form .passwordcheck {
+  margin-top: 0px;
+}
+
+.viva-form .passwordcheck ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-left: 50px;
+}
+
+.viva-form .passwordcheck li {
+  flex: 1 1 45%;
+  font-size: 14px;
+  color: var(--text-color);
+  position: relative;
+  padding-left: 22px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.password-flex-wrapper {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-top: 10px;
+  flex-wrap: wrap; /* For responsiveness on small screens */
+}
+
+.password-flex-wrapper .inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.password-flex-wrapper .passwordcheck {
+  flex: 1;
+  min-width: 270px;
+}
+.viva-form .passwordcheck li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #bbb;
+  transition: background-color 0.3s ease;
+}
+
+.viva-form .passwordcheck li.valid {
+  color: var(--success-color);
+}
+
+.viva-form .passwordcheck li.valid::before {
+  background-color: var(--success-color);
+}
+
+.viva-form .valid {
+  color: var(--success-color);
+}
+
+.viva-form .invalid {
+  color: var(--error-color);
+}
+
+.viva-form .noterror {
+  border: 1px solid var(--input-border) !important;
+}
+
+.viva-form .error {
+  border: 2px solid var(--error-color) !important;
+}
+
+.viva-form .terms-container {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.viva-form button[type="submit"] {
+  background: #000000; /* black button */
+  color: #ffffff;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
+  transition: background 0.3s ease, opacity 0.3s ease;
+  margin-top: 20px;
+}
+
+.viva-form button[type="submit"]:hover:enabled {
+  background: #333333; /* lighter black on hover */
+}
+
+.viva-form button[type="submit"]:disabled {
+  background: #666;
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 768px) {
+  
+  .viva-form .form-wrapper {
+    flex-direction: column;
+      gap: 1px;
+      
+
+  }
+
+  .viva-form button[type="submit"] {
+    float: none !important;
+    display: block;
+    margin: 20px auto 0 auto !important;
+  }
+
+
+  
+
+
+}.loader {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 0, 0, 0.2);
+  border-top: 4px solid #f70404;
+  animation: rotate 1.5s linear infinite, pulseGlow 2s ease-in-out infinite;
+  position: relative;
+  box-shadow:
+    0 0 8px rgba(255, 0, 0, 0.8),
+    0 0 20px rgba(255, 0, 0, 0.5),
+    inset 0 0 12px rgba(255, 0, 0, 0.4);
+  background: radial-gradient(circle at center, #250000 30%, #111 100%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow:
+      0 0 8px rgba(69, 238, 2, 0.8),
+      0 0 20px rgba(56, 141, 6, 0.5),
+      inset 0 0 12px rgba(8, 228, 8, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 0 16px rgba(13, 177, 13, 1),
+      0 0 30px rgba(3, 238, 15, 0.7),
+      inset 0 0 18px rgba(6, 221, 120, 0.5);
+  }
+}
+
+.loader::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(75, 187, 10, 0.08); /* greenish glow */
+  box-shadow: 0 0 60px rgba(15, 255, 0, 0.3); /* updated from red to green */
+  z-index: -1;
+  animation: pulseAura 2s infinite ease-in-out;
+}
+
+@keyframes pulseAura {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+.viva-footer {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid var(--input-border);
+  color: var(--text-color);
+  font-size: 14px;
+  background-color: var(--card-bg);
+  border-radius: 0 0 12px 12px;
+}
+
+.viva-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.viva-footer a:hover {
+  text-decoration: underline;
+}
+
+.viva-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--input-border);
+}
+
+.viva-logo {
+  height: 50px;
+  width: auto;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.viva-header h1 {
+  font-size: 22px;
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 600;
+}.otp-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.otp-modal {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.otp-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.otp-subtitle {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+.otp-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+}
+
+.otp-input-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.otp-digit-box {
+  width: 48px;
+  height: 56px;
+  font-size: 22px;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  outline: none;
+  padding: 0;
+  line-height: 156px; /* align digit vertically */
+  box-sizing: border-box;
+}
+
+.otp-btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.otp-btn-group button,
+.resend-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.otp-btn-group button:hover,
+.resend-btn:hover {
+  background: #222;
+  color: white;
+}
+
+.countdown-text {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+
+.resend-link-text {
+  font-size: 13px;
+  color: #444;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.resend-link-text span {
+  text-decoration: underline;
+  color: #000;
+  font-weight: 600;
+}
+
+.resend-link-text:hover span {
+  color: #222;
+}
+.otp-error-container {
+  min-height: 20px; /* Reserve space for error message */
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.otp-error-message {
+  color: #d93025;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeOut 4s forwards;
+  opacity: 1;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.checkbox-row {
+  display: flex;
+  gap: 30px;          /* space between two checkboxes */
+  align-items: center; /* vertically align checkbox and label */
+  margin-top: 2px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between checkbox and label */
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+@media (min-width: 769px) {
+  body, html {
+    background-color: #ffffff; /* white background for large screens */
+    color: #000000; /* black text */
+  }
+
+  .viva-form {
+    background-color: #ffffff; /* form background white */
+    color: #000; /* text inside form black */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* subtle shadow */
+  }
+}

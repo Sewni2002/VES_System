@@ -1,0 +1,242 @@
+/* ================== CSS Variables ================== */
+:root {
+  --primary-black: #111111;
+  --white: #ffffff;
+  --black: #000000;
+  --dark-green: #047857;
+  --medium-green: #10b981;
+  --gradient-green: linear-gradient(135deg, var(--dark-green) 0%, var(--medium-green) 100%);
+  --light-gray: #f9fafb;
+  --text-primary: #111111;
+  --text-secondary: #4b5563;
+  --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-medium: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-large: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* ================== Base Layout ================== */
+.SP_dashboard_layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--white);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+}
+
+/* ================== Sidebar ================== */
+.SP_UF_sidebar {
+  width: 250px;
+  min-width: 200px;
+  background-color: var(--black);
+  color: var(--white);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.SP_sidebar_title {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.SP_sidebar_profile img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  object-fit: cover;
+}
+
+.SP_sidebar_name {
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.SP_sidebar_btn {
+  width: 100%;
+  padding: 12px 0;
+  background: var(--gradient-green);
+  border: none;
+  border-radius: 12px;
+  color: var(--white);
+  font-weight: 600;
+  margin: 4px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.SP_sidebar_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* ================== Main Content ================== */
+.SP_dashboard_main {
+  margin-left: 250px;
+  flex: 1;
+  padding: 60px 20px;
+}
+
+/* ================== Profile Card ================== */
+.SP_profile_container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.SP_profile_card {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: var(--shadow-large);
+}
+
+.SP_profile_title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 20px;
+  color: var(--text-primary);
+}
+
+.SP_profile_title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: var(--dark-green);
+  border-radius: 3px;
+}
+
+/* ================== Profile Image ================== */
+.SP_profile_pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  border: 4px solid var(--medium-green);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.SP_profile_pic:hover {
+  transform: scale(1.05);
+}
+
+/* ================== Profile Info ================== */
+.SP_profile_info,
+.SP_profile_group {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.SP_profile_info li,
+.SP_profile_group li {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: var(--light-gray);
+  font-size: 14px;
+  color: var(--text-primary);
+  transition: all 0.2s ease;
+}
+
+.SP_profile_info li strong,
+.SP_profile_group li strong {
+  min-width: 140px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+/* ================== Inputs ================== */
+.SP_profile_input {
+  padding: 10px 14px;
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
+  width: 60%;
+  font-size: 14px;
+  outline: none;
+}
+
+.SP_profile_input:focus {
+  border-color: var(--dark-green);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+/* ================== Buttons ================== */
+.SP_profile_btn,
+.SP_upload_btn {
+  display: block;
+  padding: 14px 28px;
+  margin: 16px auto 0;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  background: var(--gradient-green);
+  color: var(--white);
+  transition: all 0.3s ease;
+  min-width: 160px;
+}
+
+.SP_profile_btn:hover,
+.SP_upload_btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* ================== File Upload ================== */
+.SP_selected_file {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+/* ================== Role Dropdown ================== */
+.SP_role_select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  outline: none;
+}
+
+/* ================== Responsive ================== */
+@media (max-width: 768px) {
+  .SP_dashboard_main {
+    margin-left: 0;
+    padding: 20px 15px;
+  }
+
+  .SP_profile_card {
+    padding: 25px;
+  }
+
+  .SP_profile_pic {
+    width: 140px;
+    height: 140px;
+  }
+
+  .SP_profile_input {
+    width: 100%;
+  }
+}

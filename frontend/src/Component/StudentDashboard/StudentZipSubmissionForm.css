@@ -1,0 +1,119 @@
+/* Container */
+.zip-submission-container_unique_011 {
+  max-width: 750px;
+  margin: 7px auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Heading */
+.zip-submission-heading_unique_012 {
+  text-align: center;
+  font-size:22px;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Form */
+.zip-submission-form_unique_013 {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+/* Inputs and Select */
+.zip-submission-input_unique_014,
+.zip-submission-select_unique_015 {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.zip-submission-input_unique_014:focus,
+.zip-submission-select_unique_015:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Buttons */
+.zip-submit-btn_unique_016 {
+  background-color: #28a745;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.zip-submit-btn_unique_016:hover {
+  background-color: #218838;
+}
+
+.zip-download-btn_unique_017,
+.zip-delete-btn_unique_018 {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  transition: all 0.2s ease;
+}
+
+.zip-download-btn_unique_017 {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.zip-download-btn_unique_017:hover {
+  background-color: #0056b3;
+}
+
+.zip-delete-btn_unique_018 {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.zip-delete-btn_unique_018:hover {
+  background-color: #b02a37;
+}
+
+/* Message */
+.zip-submission-message_unique_019 {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* Table */
+.zip-submissions-table_unique_020 {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.zip-submissions-table_unique_020 th,
+.zip-submissions-table_unique_020 td {
+  padding: 12px 10px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.zip-submissions-table_unique_020 th {
+  background-color: #f0f0f0;
+  font-weight: 600;
+}

@@ -1,0 +1,143 @@
+/* Base Theme */
+
+/* Header Image */
+.tg-header {
+  width: 100%;
+  max-height: 25vh;
+  overflow: hidden;
+  margin-bottom: 4px;
+  text-align: center;
+  background: #000;
+}
+
+.tg-header-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid #e5e7eb;
+}
+
+/* Page Wrapper */
+.tg-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* Main Container */
+.tg-container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: tg-fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.tg-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+/* Date */
+.tg-date {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Group List Grid */
+.tg-group-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Group Card */
+.tg-group-card {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+}
+
+.tg-group-card h3 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.tg-group-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.tg-group-card:hover {
+  background: #f0f4ff;
+  border-color: #1c5845;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(37, 235, 149, 0.15);
+}
+
+/* Member Section */
+.tg-member-section {
+  margin-top: 40px;
+}
+
+.tg-member-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.tg-member-card {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #222;
+}
+
+/* Paragraphs */
+p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Animation */
+@keyframes tg-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

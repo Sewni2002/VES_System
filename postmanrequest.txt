@@ -1,0 +1,45 @@
+///to add deean
+http://localhost:5000/api/deans/create
+
+{
+  "deanID": "DEAN-001",
+  "name": "Prof. Alice Johnson",
+  "email": "alice@example.com",
+  "password": "dean123",
+  "faculty": "Engineering",
+  "contact": "0712345678"
+}
+
+
+
+//to add lic
+
+http://localhost:5000/api/lic/create
+{
+  "licID": "LIC-2024",
+  "name": "Ms. Nadeesha Silva",
+  "email": "nadeesha@college.edu",
+  "password": "secure123",
+  "department": "IT",
+  "contact": "0771234567"
+}
+
+
+//to add instructor
+http://localhost:5000/api/instructors/create
+{
+  "instructorID": "INST-9023",
+  "name": "alex",
+  "email": "alex@gmail.com",
+  "password": "admin123",
+  "department": "Computer sdScience",
+  "contact": "07112434567"
+}
+
+
+//to generate question
+http://localhost:5000/generate-questions
+{
+  "code": "print('Hello, world!')",
+  "language": "python"
+}

@@ -1,0 +1,180 @@
+/* Reset and base styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #d8e3f0;
+  height: 100%;
+}
+
+/* Container holding sidebar and main content */
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 160px; /* Reduced from 240px */
+  background-color: #0b0f2b;
+  color: white;
+  padding: 30px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.sidebar-title {
+  font-size: 20px; /* Reduced font size */
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #28a745;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.sidebar-nav {
+  width: 100%;
+}
+
+.sidebar-nav a {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #d8e3f0;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 6px;
+  border-left: 4px solid transparent;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background: rgba(0, 255, 204, 0.15);
+  color: #00ffe7;
+  border-left: 4px solid #00ffe7;
+  font-weight: 600;
+}
+
+/* Main dashboard content area */
+.dashboard-content {
+  flex: 1;
+  background: #111425;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* Responsive grid for dashboard cards */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 10px;
+}
+
+
+/* Cards: summary and chart share base styles */
+/* Cards: summary and chart share base styles */
+.summary-card {
+  background: #14182f;
+  border: 1px solid #2c3e50;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.05);
+  padding: 0;
+  color: #e0f7ff;
+  display: flex;
+  flex-direction: column;
+  /* Remove justify-content to allow natural height growth */
+  /* justify-content: center; */
+}
+
+.chart-card {
+  display: flex;
+  justify-content: center;  /* horizontally center chart */
+  align-items: center;      /* vertically center chart */
+  padding: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: #111425;
+  padding-right: 20px;
+  /* add width/height control as needed */
+}
+
+
+/* Titles inside summary cards */
+.summary-card h3 {
+  color: #00ffe7;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+/* List styling inside cards */
+ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* Glowing button */
+.btn-glow {
+  background: linear-gradient(to right, #00ffe7, #00aaff);
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00ffe7;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  align-self: start;
+  margin-top: 15px;
+}
+
+.btn-glow:hover {
+  box-shadow: 0 0 20px #00ffe7, 0 0 30px #00aaff;
+}
+
+/* Scrollbar styling for dashboard content */
+.dashboard-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb {
+  background-color: #00ffe7;
+  border-radius: 4px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .sidebar-title {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
+  .sidebar-nav a {
+    margin-bottom: 0;
+    margin-right: 15px;
+    padding: 10px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+  }
+
+  .dashboard-content {
+    padding: 20px;
+  }
+}

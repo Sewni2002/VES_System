@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --slate: #334155;
+  --cyan: #06b6d4;
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --radius: 12px;
+  --font: 'Poppins', sans-serif;
+}
+
+.sidebar {
+  width: 240px;   
+  --sidebar-width: 240px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+}
+
+.wrap {
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+
+.sidebar {
+  position: sticky;                
+  top: 90px;                      
+  height: calc(100vh - 90px);     
+  width: var(--sidebar-width);
+  background: var(--slate);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-self: start;               
+  overflow: hidden;                
+}
+
+
+.profile {
+  flex: 0 0 auto;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 12px;
+  margin-bottom: 8px;             
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--cyan);
+  margin: 0 auto 8px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.name {
+  font-weight: 700;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+
+.menuTop {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;              
+  overflow-y: auto;
+  padding-right: 2px;
+}
+
+.menuBottom {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;             
+  margin-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 6px;
+}
+
+.menuItem {
+  width: 100%;
+  max-width: 180px;
+  align-self: center;
+  text-align: center;
+  padding: 6px 8px;      
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 14px;       
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  background: rgba(6,182,212,0.15);
+  color: #fff;
+}
+
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 0; 
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 20px 0; 
+}
+
+
+.blank {
+  flex: 1;
+  margin: 0 30px 30px 30px; 
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  min-height: calc(100vh - 100px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blankText {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+
+.editProfileBtn {
+  display: inline-block;
+  margin: 10px auto;
+  padding: 10px 18px;
+  font-size: clamp(13px, 1.3vw, 15px);
+  font-weight: 500;
+  color: #000000;
+  background-color: #ffffff; /* dark greenish professional tone */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.editProfileBtn:hover {
+  background-color: #145a3b; /* slightly lighter green */
+  transform: translateY(-2px);
+  color:white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+.btn-viva-deadline,
+.btn-announcement {
+  display: inline-block;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: clamp(13px, 1.3vw, 15px);
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Viva Deadline Button – elegant green tone */
+.btn-viva-deadline {
+  background-color: #166534; /* formal dark green */
+}
+
+.btn-viva-deadline:hover {
+  background-color: #15803d; /* lighter on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-viva-deadline:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Announcement Button – deep blue professional tone */
+.btn-announcement {
+  background-color: #0c4a6e; /* dark blue for formal tone */
+}
+
+.btn-announcement:hover {
+  background-color: #0369a1; /* lighter on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-announcement:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.licsDashboardBtnCls {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: clamp(13px, 1.3vw, 15px);
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #374151; /* professional dark gray */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.licsDashboardBtnCls:hover {
+  background-color: #4b5563; /* slightly lighter gray on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.licsDashboardBtnCls:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.editProfileBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.overlayContent {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  color: black;
+}
+
+.overlayContent h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.overlayContent label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.overlayContent input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.overlayActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+
+.avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+}

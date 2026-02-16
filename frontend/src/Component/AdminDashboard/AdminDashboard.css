@@ -1,0 +1,414 @@
+/* AdminDashboard.css */
+
+/* Container */
+.admin-dashboard {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f4f6f8;
+}
+
+/* === Modern Admin Sidebar === */
+.admin-dashboard .sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #0d1117; /* deep modern black-blue */
+  color: #e4e6eb;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 25px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+}
+
+/* === Profile Section === */
+.admin-dashboard .sidebar .profile-section {
+  text-align: center;
+  padding: 0 10px 10px;
+  border-bottom: 1px solid #3309ed92;
+}
+
+.admin-dashboard .sidebar .profile-section .avatar {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 2px solid #00bcd4;
+  object-fit: cover;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.admin-dashboard .sidebar .profile-section .avatar:hover {
+  transform: scale(1.05);
+}
+
+.admin-dashboard .sidebar .profile-section h3 {
+  font-size: 17px;
+  margin: 5px 0 2px;
+  color: #fff;
+}
+
+.admin-dashboard .sidebar .profile-section p {
+  font-size: 16px;
+  color: #9ca3af;
+}
+
+/* === Menu Section === */
+.admin-dashboard .sidebar .menu {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-dashboard .sidebar .menu li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  margin: 4px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #d1d5db;
+  transition: all 0.3s ease;
+}
+
+.admin-dashboard .sidebar .menu li:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.admin-dashboard .sidebar .menu li.active {
+  background: #086503;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+  transform: translateX(4px);
+}
+
+/* === Icons (optional if using FontAwesome or Lucide) === */
+.admin-dashboard .sidebar .menu li i {
+  font-size: 18px;
+  width: 22px;
+  text-align: center;
+}
+
+/* === Logout Button === */
+.admin-dashboard .sidebar .menu li.logout {
+  margin-top: auto;
+  background: #dc2626;
+  color: #fff;
+  justify-content: center;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.admin-dashboard .sidebar .menu li.logout:hover {
+  background: #b91c1c;
+  transform: scale(1.03);
+}
+
+/* === Scrollbar Styling (Modern Minimal) === */
+.admin-dashboard .sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.admin-dashboard .sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+}
+.admin-dashboard .sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* === Responsive (Auto Collapse) === */
+@media (max-width: 768px) {
+  .admin-dashboard .sidebar {
+    width: 200px;
+  }
+  .admin-dashboard .sidebar .profile-section .avatar {
+    width: 70px;
+    height: 70px;
+  }
+  .admin-dashboard .sidebar .menu li {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+
+/* Main Content */
+.admin-dashboard .main-content {
+  flex: 1;
+  padding: 30px;
+  margin-left: 250px; /* leave space for fixed sidebar */
+  overflow-y: auto;
+}
+
+.admin-dashboard .main-content header h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.admin-dashboard .main-content header p {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 20px;
+}
+
+/* Cards: single row with horizontal scroll if needed */
+/* Cards: single row with horizontal scroll if needed */
+.admin-dashboard .cards {
+  display: flex;
+  flex-direction: row;
+  gap: 8px; /* reduced gap */
+  overflow-x: auto;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+.admin-dashboard .cards::-webkit-scrollbar {
+  height: 8px;
+}
+
+.admin-dashboard .cards::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 4px;
+}
+
+.admin-dashboard .cards .card {
+  min-width: 180px; /* card width */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  flex-shrink: 0;
+}
+
+.admin-dashboard .cards .card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+.admin-dashboard .cards .card h2,
+.admin-dashboard .cards .card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.admin-dashboard .cards .card p {
+  font-size: 22px;
+  font-weight: bold;
+  color: #086503;
+}
+
+/* Chart Section */
+.admin-dashboard .chart-section {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+}
+
+.admin-dashboard .chart-section h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.admin-dashboard .chart-container {
+  width: 100%;
+  height: 350px;
+}
+
+/* Upcoming Schedules Table */
+.admin-dashboard .upcoming-section {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-dashboard .upcoming-section h2 {
+      font-size: 22px;
+
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.admin-dashboard .upcoming-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-dashboard .upcoming-table th,
+.admin-dashboard .upcoming-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.admin-dashboard .upcoming-table thead {
+  background-color: #000000;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.admin-dashboard .upcoming-table tbody tr:nth-child(even) {
+  background-color: #f4f6f8;
+}
+
+.admin-dashboard .upcoming-table tbody tr:hover {
+  background-color: #e1e7f6;
+}
+
+/* Loading */
+.admin-dashboard .loading {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+  color: #4e73df;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-dashboard {
+    flex-direction: column;
+  }
+
+  .admin-dashboard .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    padding: 10px;
+  }
+
+  .admin-dashboard .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .admin-dashboard .cards {
+    gap: 5px;
+    overflow-x: auto;
+  }
+}
+/* ===== Report Generator Section ===== */
+.report-generator {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.report-title {
+  color: #000;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.report-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Keeps layout responsive */
+}
+
+.report-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.report-btn:hover {
+  background: #222;
+  transform: scale(1.05);
+}
+
+/* Responsive - stack on small screens */
+@media (max-width: 768px) {
+  .report-buttons {
+    flex-direction: column;
+  }
+
+  .report-btn {
+    width: 90%;
+  }
+}
+/* === Manage Students Options Panel === */
+.admin-dashboard .manage-students .options {
+  flex: 0 0 220px; /* fixed width */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between buttons */
+  margin-top: 90px; /* top spacing */
+  padding: 20px;
+  background-color: #ffffff; /* fixed white background */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  height: 640px; /* fixed height */
+  min-height: 640px; /* ensure it doesn't shrink */
+  max-height: 640px; /* ensure it doesn't grow */
+  box-sizing: border-box;
+  position: sticky; /* stays in place when scrolling */
+  top: 100px; /* aligns with top margin */
+}
+
+.admin-dashboard .manage-students .options button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.admin-dashboard .manage-students .options button:hover {
+  background-color: #222;
+  transform: scale(1.03);
+}
+
+/* Responsive: smaller screens */
+@media (max-width: 768px) {
+  .admin-dashboard .manage-students .options {
+    flex: 1 1 auto;
+    width: 80%;
+    height: auto; /* allow flexible height on small screens */
+    margin-top: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .admin-dashboard .manage-students .options button {
+    flex: 1 1 calc(50% - 10px);
+    font-size: 13px;
+  }
+}

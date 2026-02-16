@@ -1,0 +1,93 @@
+@import "./LICDashboard.css";
+
+/* Page header (title + right button) */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6px 30px 12px 30px;
+}
+
+
+/* Panel / card */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+  margin: 0 30px 24px 30px;
+  padding: 18px;
+}
+
+/* Simple form grid */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.row { margin: 10px 0; display: grid; gap: 6px; }
+.lbl { font-weight: 600; color: var(--slate); }
+.input {
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+}
+
+/* Segmented switch */
+.seg { display: inline-flex; background: #e2e8f0; border-radius: 999px; padding: 4px; }
+.segBtn {
+  border: none; background: transparent; padding: 8px 14px;
+  border-radius: 999px; cursor: pointer; font-weight: 600;
+}
+.segBtn.active { background: var(--cyan); color: #fff; }
+
+/* Attachments */
+.stack { display: grid; gap: 8px; }
+.attachList { display: grid; gap: 10px; }
+.attachRow { display: grid; grid-template-columns: 1fr 2fr auto; gap: 8px; }
+.miniBtn {
+  border: none; border-radius: 8px; padding: 8px 10px; cursor: pointer;
+  background: #e2e8f0; font-weight: 600;
+}
+.miniBtn.danger { background: #ef4444; color: #fff; }
+
+/* Actions */
+.actions { display: flex; gap: 10px; margin-top: 10px; }
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: var(--cyan);
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(6,182,212,0.25);
+}
+.btn.run { background: #0284c7; }
+.btn.ghost { background: #0ea5b7; }
+
+/* Tables */
+.tableHeader { display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px; }
+.table { width: 100%; }
+.tHead, .tRow {
+  display: grid;
+  grid-template-columns: 1.2fr 0.6fr 0.9fr 2fr 1fr 1fr 1fr; /* deadlines */
+  gap: 10px;
+  padding: 10px 8px;
+  border-bottom: 1px solid #eef2f7;
+}
+.table .tHead { font-weight: 700; color: var(--slate); background: #f8fafc; border-radius: 8px; }
+.table + .table .tHead { /* not used */ }
+
+.card:nth-of-type(2) .tHead, 
+.card:nth-of-type(2) .tRow {
+  grid-template-columns: 1.2fr 0.6fr 0.9fr 2fr 1.6fr 1fr; /* instructions layout */
+}
+
+.rowActions { display: flex; gap: 6px; }
+.attachCell a { margin-right: 10px; text-decoration: underline; color: var(--cyan); }
+
+.muted { color: var(--muted); }
+.empty { color: var(--muted); padding: 10px 8px; }

@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.loginContainer {
+  display: flex;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  flex-direction: row;
+  color: #ffffff;
+}
+
+.loginBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 6vw, 4rem);
+  background-color: #ffffff;
+  color: #111;
+  max-width: 400px;
+  z-index: 2;
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.08);
+}
+
+.loginTitle {
+  font-size: clamp(1.25rem, 2vw, 1.75rem); /* smaller than before */
+  font-weight: 500; /* a bit lighter for modern look */
+  margin-bottom: 1.5rem; /* slightly reduced spacing */
+  text-align: center;
+  color: #1a1a1a; /* darker tone but softer than pure black */
+  letter-spacing: 0.5px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.loginLabel {
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.loginInput {
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f7f7f7;
+  font-size: 1rem;
+  color: #222;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.loginInput:focus {
+  outline: none;
+  border-color: #6c63ff;
+  background-color: #fff;
+}
+
+.loginButton {
+  padding: 0.9rem 1rem;
+  background-color: #000000; /* black button */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #333333; /* slightly lighter black on hover */
+}
+
+
+.loginButton:hover {
+  background-color: #0050cc;
+}
+
+.forgotContainer {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.forgotLink {
+  font-size: 0.8rem;
+  color: #5555cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgotLink:hover {
+  color: #000;
+}
+
+/* Right panel */
+.rightPanel {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: clamp(2rem, 5vw, 4rem);
+  color: #fff;
+}
+
+.rightPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(15, 12, 41, 0.6), rgba(48, 43, 99, 0.7));
+  z-index: 0;
+}
+
+.rightPanelContent {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.rightPanel h1 {
+  font-size: clamp(1rem, 2.5vw, 2rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.logo {
+  width: clamp(40px, 8vw, 60px);
+  height: auto;
+  display: block;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .logoContainer {
+    justify-content: center;
+  }
+
+  .rightPanel h1 {
+    text-align: center;
+  }
+}
+
+
+.rightPanel p {
+  font-size: 1rem;
+  color: #e0e0e0;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  margin-right: 15rem;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rightPanelContent h1,
+.rightPanelContent p {
+  animation: fadeInUp 0.6s ease forwards;
+}
+@media (max-width: 900px) {
+  .loginContainer {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .rightPanel {
+    order: 1; /* Show first */
+    min-height: 300px;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .loginBox {
+    order: 2;
+    max-width: 100%;
+    box-shadow: none;
+    padding: 2rem;
+  }
+
+  .rightPanelContent {
+    max-width: 100%;
+  }
+
+  .rightPanel h1 {
+    font-size: 2rem;
+  }
+
+  .rightPanel p {
+    font-size: 0.95rem;
+  }
+
+  .forgotContainer {
+    text-align: center;
+  }
+}
+
+.registerContainer {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.registerLink {
+  font-size: 0.875rem;
+  color: #0044cc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.registerLink:hover {
+  color: #001a66;
+}
+.loginNote {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  text-align: justify;
+}
